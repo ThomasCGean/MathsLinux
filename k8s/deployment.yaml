@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mathlinux-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mathlinux
+  template:
+    metadata:
+      labels:
+        app: mathlinux
+    spec:
+      containers:
+      - name: mathlinux
+        image: thomasgean/MathLinux:latest
+        ports:
+        - containerPort: 8080
