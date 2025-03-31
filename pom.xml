@@ -1,5 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.1.2</version> <!-- You can use another recent version -->
+    <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
   
   <modelVersion>4.0.0</modelVersion>
 
@@ -16,6 +23,7 @@
 	<sonar.projectKey>LinuxMath</sonar.projectKey>
 	<sonar.exclusions>pom.xml</sonar.exclusions>
 	<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+	<java.version>17</java.version>
   </properties>
 
   <build>
@@ -27,7 +35,7 @@
       <version>2.22.2</version> <!-- Needed for JUnit 5 -->
     </plugin>
     
-      <!-- Compiler Plugin:  release Java 8 = Compatibility for SonarQube container-->
+      <!-- Compiler Plugin:  source/target Java 8 = Compatibility for SonarQube container-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -76,7 +84,18 @@
         <version>5.9.2</version>  <!-- Latest stable version -->
         <scope>test</scope>
     </dependency>
+    <!-- Spring Boot Starter Web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
+    <!-- Spring Boot Starter Test (optional, for testing) -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
     <!-- JUnit 5 Engine to run the tests -->
     <dependency>
         <groupId>org.junit.jupiter</groupId>
