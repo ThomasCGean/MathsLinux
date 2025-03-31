@@ -16,4 +16,4 @@ spec:
       - name: mathlinux
         image: thomasgean/MathLinux:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
