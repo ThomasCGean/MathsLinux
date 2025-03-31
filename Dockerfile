@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY target/MathLinux-0.0.1-SNAPSHOT.jar /app/MathLinux-0.0.1-SNAPSHOT.jar
 
+EXPOSE 8081
+
 ENTRYPOINT ["java", "-jar", "/app/MathLinux-0.0.1-SNAPSHOT.jar"]
