@@ -31,7 +31,7 @@ pipeline {
                         echo "Running Maven inside Docker container using the correct host path"
                         docker run --rm --name Java17 \
                         -v "${WORKSPACE}":/workspace \
-						-w /workspace
+						-w /workspace \
                         maven:3.8.6-eclipse-temurin-17 \
                         sh -c 'echo "Inside Docker - Current Directory:"; pwd; ls -l; mvn clean compile'
                         echo "After Docker Execution - Current Directory:"
@@ -48,7 +48,7 @@ pipeline {
                     sh """
                         docker run --rm --name Java11 \
                         -v "${WORKSPACE}":/workspace \
-						-w /workspace
+						-w /workspace \
                         maven:3.8.6-eclipse-temurin-11 \
                         sh -c 'mvn clean test jacoco:report'
                     """
@@ -64,7 +64,7 @@ pipeline {
                         	-e SONAR_TOKEN=${SONAR_AUTH_TOKEN} \
                         	-e SONAR_HOST_URL=${SONAR_HOST_URL} \
                         	-v "${WORKSPACE}":/workspace \
-							-w /workspace
+							-w /workspace \
                          	 maven:3.8.6-eclipse-temurin-8 \
                           	 sh -c 'mvn sonar:sonar \
                                 -Dsonar.host.url=${SONAR_HOST_URL} \
@@ -84,7 +84,7 @@ pipeline {
                     docker run --rm \
                       --name java17builder \
                       -v "${WORKSPACE}":/workspace \
-					  -w /workspace
+					  -w /workspace \
                       maven:3.8.6-eclipse-temurin-17 \
                       mvn clean package spring-boot:repackage
                 """
