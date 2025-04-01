@@ -77,18 +77,25 @@ pipeline {
     }
 }
 
-        stage('Package in Java 17 and Build Docker Image') {
+stage('Build JAR in Java 17') {
     steps {
-        sh '''
-            docker run --rm --name Java17DockerImage\
-              -v /var/lib/docker/volumes/jenkins_home/_data/workspace/MidtermPipeline:/workspace \
+        sh """
+            docker run --rm \
+              --name java17builder
+              -v "${WORKSPACE}":/workspace \
               -w /workspace \
               maven:3.8.6-eclipse-temurin-17 \
               mvn clean package spring-boot:repackage
-        '''
+        """
+    }
+}
+
+stage('Build Docker Image from JAR') {
+    steps {
         sh 'docker build -t thomasgean/mathlinux:latest .'
     }
 }
+
 
         stage('Push to Docker Hub') {
     steps {
