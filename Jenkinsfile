@@ -10,8 +10,8 @@ pipeline {
                         pwd
                         ls -l
 
-                        echo "Updating repository instead of cloning..."
-                        git pull origin master || echo "First run, nothing to pull."
+                        echo "SCM checkout"
+                        checkout scm
 
                         echo "After Git Checkout - Current Directory:"
                         pwd
