@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    def hostWORKSPACE = "/var/lib/docker/volumes/jenkins_home/_data/workspace/${env.JOB_NAME}"
+    environment {
+		    def hostWORKSPACE = "/var/lib/docker/volumes/jenkins_home/_data/workspace/${env.JOB_NAME}"
+	}
     stages {
         stage('Checkout Code') {
             steps {
