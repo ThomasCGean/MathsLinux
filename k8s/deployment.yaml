@@ -15,5 +15,6 @@ spec:
       containers:
       - name: mathlinux
         image: thomasgean/mathlinux:latest
+		imagePullPolicy: Always
         ports:
         - containerPort: 8081
