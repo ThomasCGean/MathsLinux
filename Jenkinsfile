@@ -70,14 +70,14 @@ pipeline {
                             -Dsonar.login=${SONAR_AUTH_TOKEN} \
                             -Dsonar.java.source=1.8 \
                             -Dsonar.java.target=1.8 \
-                            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+                            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
                             -Dsonar.exclusions=**/MathController.java,**/MathLinuxApplication.java'
             """
         }
     }
 }
 
-stage('Build JAR in Java 17') {
+		stage('Build JAR in Java 17') {
     steps {
         sh """
             docker run --rm \
