@@ -85,9 +85,7 @@ pipeline {
               maven:3.8.6-eclipse-temurin-17 \
               mvn clean package spring-boot:repackage
         '''
-        sh 'ls -lh target/MathLinux-0.0.1-SNAPSHOT.jar'
         sh 'docker build -t thomasgean/mathlinux:latest .'
-        sh 'unzip -p target/MathLinux-0.0.1-SNAPSHOT.jar META-INF/MANIFEST.MF'
     }
 }
 
