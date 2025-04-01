@@ -6,17 +6,19 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        echo "Before Git Checkout - Current Directory:"
+                        echo "Before SCM Checkout - Current Directory:"
                         pwd
                         ls -l
+                       		 '''
 
                         echo "SCM checkout"
                         checkout scm
-
+                        
+						'''
                         echo "After Git Checkout - Current Directory:"
                         pwd
                         ls -l
-                    '''
+                    			'''
                 }
             }
         }
