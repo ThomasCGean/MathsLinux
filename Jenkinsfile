@@ -81,7 +81,7 @@ pipeline {
     steps {
         sh """
             docker run --rm \
-              --name java17builder
+              --name java17builder \
               -v "${WORKSPACE}":/workspace \
               -w /workspace \
               maven:3.8.6-eclipse-temurin-17 \
