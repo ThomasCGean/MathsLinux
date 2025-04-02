@@ -34,8 +34,14 @@ networks:
     driver: bridge
 
 volumes:
-  jenkins_home:
-  sonarqube_conf:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_logs:
+	  jenkins_home:
+	    external: true
+	  sonarqube_conf:
+	    external: true
+	  sonarqube_data:
+	    external: true
+	  sonarqube_extensions:
+	    external: true
+	  sonarqube_logs:
+	    external: true
+
