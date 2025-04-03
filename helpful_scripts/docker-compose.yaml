@@ -15,7 +15,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ~/.kube:/var/jenkins_home/.kube
     extra_hosts:
-      - "host.docker.internal:host-gateway"  # For Docker Engine + Docker Desktop compatibility
+      - "host.docker.internal:host-gateway"  # For Docker Engine + Docker Desktop cross compatibility
 
   sonarqube:
     container_name: sonarqube-server
