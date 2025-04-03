@@ -28,7 +28,7 @@ kubectl label node "$CLUSTER_NAME-control-plane" ingress-ready=true --overwrite
 echo "Deploying ingress-nginx controller..."
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.4/deploy/static/provider/kind/deploy.yaml
 
-# 6. Wait for the ingress-nginx controller to become ready
+# 6. Wait for the ingress-nginx controller to be ready
 echo "Waiting for ingress-nginx controller to be ready..."
 kubectl wait --namespace ingress-nginx \
   --for=condition=Ready pod \
