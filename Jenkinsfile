@@ -12,7 +12,8 @@ pipeline {
                         pwd
                         ls -l
                        		 '''
-
+                        echo "Cleaning Workspace"
+                        cleanWs()
                         echo "SCM checkout"
                         checkout scm
                         
