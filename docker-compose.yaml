@@ -14,9 +14,6 @@ services:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - ~/.kube:/var/jenkins_home/.kube
-    extra_hosts:
-		- "host.docker.internal:host-gateway"
-
 
   sonarqube:
     container_name: sonarqube-server
@@ -30,10 +27,14 @@ services:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_logs:/opt/sonarqube/logs
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
 
 networks:
   jenkinsCI:
     name: jenkinsCI
+    external: true
     driver: bridge
 
 volumes:
