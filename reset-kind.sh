@@ -43,4 +43,4 @@ kubectl apply -f k8s/ingress.yaml
 
 # Done
 echo "Kind cluster is ready and app is deployed."
-echo "Visit: http://mathlinux.local/add?a=5&b=5 (ensure /etc/hosts is updated)"
+echo "Visit: http://mathlinux.local/add?a=5&b=5"
