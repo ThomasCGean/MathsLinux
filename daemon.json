@@ -1,0 +1,7 @@
+//This json file is only needed for using Docker Engine on Ubuntu without Docker Desktop. Place this file in /etc/docker/daemon.json
+{
+  "experimental": true,
+  "features": {
+    "buildkit": true
+  }
+}
