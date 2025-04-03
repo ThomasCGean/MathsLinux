@@ -11,7 +11,7 @@ nodes:
         hostPort: 443
         protocol: TCP
       - containerPort: 6443       # <--- K8s API server inside Kind
-        hostPort: 43399           # <--- port reached from Jenkins
+        hostPort: 43399           # <--- port reached from Jenkins container
         listenAddress: "0.0.0.0"  # <--- Makes it accessible from Docker bridge (jenkinsCI is bridged)
         protocol: TCP
     kubeadmConfigPatches:
