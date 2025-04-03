@@ -14,6 +14,9 @@ services:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - ~/.kube:/var/jenkins_home/.kube
+    extra_hosts:
+		- "host.docker.internal:host-gateway"
+
 
   sonarqube:
     container_name: sonarqube-server
