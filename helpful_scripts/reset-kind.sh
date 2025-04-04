@@ -28,7 +28,7 @@ kubectl label node "$CLUSTER_NAME-control-plane" ingress-ready=true --overwrite
 echo "Deploying ingress-nginx controller..."
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.4/deploy/static/provider/kind/deploy.yaml
 
-# 6. Wait for the ingress-nginx controller to be ready
+# 6. Wait for the ingress-nginx controller to become ready
 echo "Waiting for ingress-nginx controller to be ready..."
 kubectl wait --namespace ingress-nginx \
   --for=condition=Ready pod \
@@ -43,4 +43,4 @@ kubectl apply -f k8s/ingress.yaml
 
 # Done
 echo "Kind cluster is ready and app is deployed."
-echo "Visit: http://mathlinux.local/add?a=5&b=5"
+echo "Visit: http://mathlinux.local/add?a=5&b=5 (ensure /etc/hosts is updated)"
