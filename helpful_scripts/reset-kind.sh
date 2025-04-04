@@ -18,7 +18,7 @@ kind create cluster --name "$CLUSTER_NAME" --config "$CONFIG_FILE"
 # 3. Set server address to host.docker.internal in kubeconfig (for Jenkins container access)
 echo "Patching kubeconfig to use host.docker.internal..."
 kubectl config set-cluster kind-$CLUSTER_NAME \
-  --server="https://host.docker.internal:$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}' | grep -o '[0-9]*$')"
+  --server="https://host.docker.internal:43399"
 
 # 4. Label the node for Ingress NGINX scheduling
 echo "Labeling node for ingress-nginx..."
