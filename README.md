@@ -1,5 +1,5 @@
 <h1>Watch a demonstration of this pipeline here!</h1>
-<h1>https://www.youtube.com/watch?v=M-Zdl4d26Iw&t</h1>h1>
+<h1>https://www.youtube.com/watch?v=M-Zdl4d26Iw&t</h1>
 
 
 This is a fully functional CI/CD pipeline created using Jenkins, Docker, SonarQube, Kubernetes (via kind), and built for analyzing apps written in Java Maven. 
